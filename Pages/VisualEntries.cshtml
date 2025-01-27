@@ -1,0 +1,67 @@
+@page
+@model ChickenSoup.Pages.VisualEntriesModel
+@{
+    ViewData["Title"] = "Visual Entries Gallery";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Button to toggle the upload form -->
+<button id="showFormButton" class="btn btn-primary">Create New Visual Entry</button>
+
+<!-- Form to upload new image (hidden initially) -->
+<div id="uploadForm" style="display:none;">
+    <h2>Upload New Visual Entry</h2>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image" name="Image" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="caption">Caption</label>
+            <input type="text" id="caption" name="ImageCaption" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
+
+<!-- Display uploaded images in a gallery layout -->
+<h2>Visual Entries</h2>
+@if (Model.EntryList != null && Model.EntryList.Any())
+{
+    <div class="row">
+        @foreach (var entry in Model.EntryList)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="@entry.ImagePath" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <p class="card-text">@entry.ImageCaption</p>
+                        <p class="card-text text-muted">@entry.CreatedAt.ToString("MM/dd/yy")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        It is not nice to leave the image or caption blank! Please reload this page and try again.
+    </div>
+}
+
+
+<!-- JavaScript to toggle the visibility of the form -->
+@section Scripts {
+    <script>
+        document.getElementById("showFormButton").addEventListener("click", function() {
+            var form = document.getElementById("uploadForm");
+            if (form.style.display === "none") {
+                form.style.display = "block"; // Show the form
+            } else {
+                form.style.display = "none"; // Hide the form
+            }
+        });
+    </script>
+}

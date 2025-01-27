@@ -1,0 +1,48 @@
+@page
+@model ChickenSoup.Pages.Entries
+@{
+    ViewData["Title"] = "Entries";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Search Bar Form -->
+<form method="get" class="form-inline">
+    <div class="form-group mb-2">
+        <label for="categorySearch" class="mr-2">Search by Category</label>
+        <input type="text" id="categorySearch" name="categorySearch" class="form-control mr-2" value="@Model.CategorySearch" style="width: 250px;" />
+        <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </div>
+</form>
+
+<!-- Create Entry link -->
+<a href="/Create" class="btn btn-primary">Create New Entry</a>
+
+<!-- Entries >-->
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Created At</th>
+    </tr>
+
+    @foreach(var entry in Model.EntryList)
+    {
+        <tr>
+            <td>@entry.Id</td>
+            <td>@entry.Name</td>
+            <td>@entry.Category</td>
+            <td>@entry.Description</td>
+            <td>@entry.CreatedAt.ToString("MM/dd/yy")</td>
+            <td>
+                <!-- Delete Button -->
+                <form method="post" asp-page-handler="Delete" asp-route-id="@entry.Id" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+
+    }
+</table>

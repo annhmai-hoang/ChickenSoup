@@ -1,0 +1,29 @@
+@page
+@model ChickenSoup.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create Entry";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Entry.Name"></label>
+        <input asp-for="Entry.Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entry.Category"></label>
+        <input asp-for="Entry.Category" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Entry.Description"></label>
+        <input asp-for="Entry.Description" class="form-control" />
+    </div>
+
+    <!-- Hidden input for CreatedAt that gets automatically set on the backend -->
+    <input type="hidden" asp-for="Entry.CreatedAt" value="@DateTime.Now" />
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

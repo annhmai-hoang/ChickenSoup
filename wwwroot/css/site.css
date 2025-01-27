@@ -1,0 +1,106 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+body {
+  background-image: url('/images/bunny-background.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center; 
+  color: #000000; 
+}
+
+.custom-awful-button {
+  background-color: #FAE29C; 
+  border: none; 
+  color: #333; 
+  font-weight: bold; 
+  border-radius: 8px; 
+  padding: 10px 20px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease; /* hover effect */
+}
+
+/* hover effect */
+.custom-awful-button:hover {
+  background-color: #FAD684; /* Slightly darker shade on hover */
+  cursor: pointer; 
+}
+
+.table {
+  background-color: transparent; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.container {
+  padding: 20px;
+}
+
+/* General button styling */
+.btn {
+  background-color: #FAE29C; 
+  color: #333; 
+  border: 1px solid #E5C585; 
+  border-radius: 5px; 
+  padding: 8px 16px; 
+  font-weight: bold; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* hover effect */
+.btn:hover {
+  background-color: #FBD99B; /* Slightly darker shade on hover */
+  transform: scale(1.05); 
+  cursor: pointer; 
+}
+
+/* Danger button (Delete) */
+.btn-danger {
+  background-color: #F8BFBF; 
+  border: 1px solid #E59797;
+}
+
+.btn-danger:hover {
+  background-color: #F3A6A6; 
+}
+
+/* Primary button for actions like search or create */
+.btn-primary {
+  background-color: #AFCBFA; 
+  border: 1px solid #89ABF3;
+}
+
+.btn-primary:hover {
+  background-color: #92B9F3; 
+}
