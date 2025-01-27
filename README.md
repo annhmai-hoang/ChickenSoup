@@ -1,0 +1,2 @@
+# ChickenSoup
+journal entry webapp
