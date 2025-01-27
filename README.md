@@ -6,7 +6,7 @@ ChickenSoup is a simple journal web application where you can log little events 
 ## Features
 - **Create Entries**: Log your experiences, add descriptions, and categorize your entries.
 - **Upload Pictures**: Upload and display images along with your entries.
-- **Jolly Button**: A fun, motivational button to brighten up your day!
+- **Jolly Button**: A fun, motivational button to brighten up your day! Try clicking it more than just once! 
 
 ## Prerequisites
 - [.NET 6 SDK or higher](https://dotnet.microsoft.com/download) 
